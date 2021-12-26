@@ -26,7 +26,7 @@ Edit the destination cell location by changing line 9 and 10 (GOAL_X and GOAL_Y)
 ```
 and line 413 in path_plan/worlds/test_world_1.world.
 ```
-pose frame=''>4.5 4.5 -0.04990 0 -0 0</pose>
+<pose frame=''>4.5 4.5 -0.04990 0 -0 0</pose>
 ```
 
 Run the simulation according to the following steps.
