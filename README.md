@@ -10,3 +10,27 @@ Lastly, at each cell, the robot will determine which of its adjacent cell to tra
 1. BFS performs in O(V+E) time which is sufficiently efficient enough to be computed on the Raspberry Pi on board the Turtlebot3.
 2. The BFS and obstacle detection algorithm is optimised to be performed only when necessary in this environment to reduce unnecessary computation. Both algorithms are only ran when the Turtlebot3 is closer to the center of each cell to avoid errors in detection of obstacles.
 3. Movements of the Turtlebot3 to diagonally adjacent cells is possible to reduce the net time required to reach each destination cell.
+
+## Instructions
+Edit the destination cell location by changing line 9 and 10 (GOAL_X and GOAL_Y) in path_plan/include/PreDefine.hpp, and line 413 in path_plan/worlds/test_world_1.world.
+
+Run the simulation according to the following steps.
+
+### Step 1: Create a workspace
+```
+mkdir workspace_name
+cd workspace_name
+mkdir src
+catkin_make
+```
+### Step 2: Add the path_plan package into the src folder
+### Step 3: Add the run.sh file into the workspace
+### Step 4: Build the package and source the workspace
+```
+catkin_make
+source ./devel/setup.bash
+```
+### Step 5: Run the simulation
+```
+bash run.sh
+```
