@@ -6,13 +6,28 @@ The environment is divided into a 9x9 grid, where each cell will be a node. The 
 
 Lastly, at each cell, the robot will determine which of its adjacent cell to travel to next to approach the destination cell. The adjacent cell with lowest total weight from the destination cell will be chosen as the target, and PID control will be implemented for the robot to approach that cell. This is repeated until the destination cell is reached.
 
+![image](https://user-images.githubusercontent.com/77652228/147397924-edd0309c-8693-4fde-863d-4dfe5b00713b.png)
+
+This project is ran on ROS Noetic and ROS Gazebo using C++
+
 ## Features
 1. BFS performs in O(V+E) time which is sufficiently efficient enough to be computed on the Raspberry Pi on board the Turtlebot3.
 2. The BFS and obstacle detection algorithm is optimised to be performed only when necessary in this environment to reduce unnecessary computation. Both algorithms are only ran when the Turtlebot3 is closer to the center of each cell to avoid errors in detection of obstacles.
 3. Movements of the Turtlebot3 to diagonally adjacent cells is possible to reduce the net time required to reach each destination cell.
 
+## ROS Nodes and Topics
+![image](https://user-images.githubusercontent.com/77652228/147397929-9db78ce4-dbb7-45ac-8660-878dd0d354f8.png)
+
 ## Instructions
-Edit the destination cell location by changing line 9 and 10 (GOAL_X and GOAL_Y) in path_plan/include/PreDefine.hpp, and line 413 in path_plan/worlds/test_world_1.world.
+Edit the destination cell location by changing line 9 and 10 (GOAL_X and GOAL_Y) in path_plan/include/PreDefine.hpp, 
+```
+#define GOAL_X 4 //target position
+#define GOAL_Y 4 //target position
+```
+and line 413 in path_plan/worlds/test_world_1.world.
+```
+pose frame=''>4.5 4.5 -0.04990 0 -0 0</pose>
+```
 
 Run the simulation according to the following steps.
 
