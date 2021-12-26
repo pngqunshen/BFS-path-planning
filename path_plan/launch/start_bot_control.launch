@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="path_plan" type="bot_control_node" name="bot_control_node"
+        output="screen"/>
+    <rosparam command="load" file="$(find path_plan)/config/config.yaml"/>
+</launch>
